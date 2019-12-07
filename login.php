@@ -10,11 +10,12 @@ if($polaczenie->connect_errno!=0)
 	echo "ERROR";
 }
 else{
+	$login = $_POST['login'];
+	$haslo = $_POST['haslo'];
 	echo "CONNECT TO DATABASE";
 	$polaczenie->close();
 }
-#$login = $_POST['login'];
-#$haslo = $_POST['haslo'];
+
 
 
 
