@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION['zalogowano']) && $_SESSION['zalogowano'] == true)
+{
+header('Location:panel_uzytkownika.php');
+exit();
+}
+?>
+
 <html>
 <head>
 <link rel="stylesheet" href="style.css" />
@@ -16,5 +25,8 @@
 <input type="submit" value="Zaloguj"></input>
 </form>
 <a href="rejestracja.php"><input type="button" value="Zarejestruj się za darmo"></input></a>
+<?php
+if (isset($_SESSION['Error'])) echo $_SESSION['Error'];
+?>
 </body>
 </html>
