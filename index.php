@@ -27,6 +27,7 @@ exit();
 <a href="rejestracja.php"><input type="button" value="Zarejestruj się za darmo"></input></a>
 <?php
 if (isset($_SESSION['Error'])) echo $_SESSION['Error'];
+unset($_SESSION['Error']);
 ?>
 </body>
 </html>

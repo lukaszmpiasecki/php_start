@@ -4,6 +4,7 @@
 session_start();
 require_once "connect_sql.php";
 
+
 $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 
 if($polaczenie->connect_errno!=0)
@@ -13,8 +14,13 @@ if($polaczenie->connect_errno!=0)
 else{
 	$login = $_POST['login'];
 	$haslo = $_POST['haslo'];
-	$zapytanie = "SELECT * FROM CZYTELNICY WHERE login='$login' AND haslo='$haslo'";
-	if ($wynik = $polaczenie->query($zapytanie))
+	
+	$login = htmlentities($login,ENT_QUOTES,"UTF-8");
+	$haslo = htmlentities($haslo,ENT_QUOTES,"UTF-8");
+	
+	if ($wynik = $polaczenie->query(sprintf(SELECT * FROM CZYTELNICY WHERE login='%s' AND haslo='%s',
+	mysqli_real_escape_string($polaczenie,$login),
+	mysqli_real_escape_string($polaczenie,$haslo))))
 	{
 		$ile = $wynik->num_rows;
 		if ($ile>0)
