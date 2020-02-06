@@ -1,8 +1,3 @@
-<html>
-<head>
-<link rel="stylesheet" href="style.css" />
-</head>
-<body>
 <?php
 session_start();
 if (!isset($_SESSION['zalogowano']))
@@ -16,6 +11,13 @@ $imie = $_SESSION['Imie'];
 $nazwisko = $_SESSION['Nazwisko'];
 $email = $_SESSION['Email'];
 ?>
+
+<html>
+<head>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
 <a href=wyloguj.php><button type="button">Wyloguj</button></a>
 </body>
 </html>
