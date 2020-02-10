@@ -1,5 +1,6 @@
-body
+.reg
 {
-	background-color:green;
-	margin-left:25px;
+	background-image:url("vintage-wallpaper.png");
+	color:#ccffcc;
+	margin:25px;
 }
