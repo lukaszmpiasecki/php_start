@@ -1,8 +1,8 @@
-var licznik = 0;
-
-function stoper()
+function wypiszUwagi(id)
 {
-	
-	document.getElementById("panel").innerHTML = licznik++;
-	setTimeout("stoper()",1000);
+	if (id == "login")
+	{
+		//wypisz pod inputem infrmacje o wymaganiach
+		document.getElementById('infologin').innerHTML="LALALALA";
+	}
 }
