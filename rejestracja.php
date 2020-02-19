@@ -12,7 +12,10 @@ if (isset($_POST['login']))
 	$mail = $_POST['mail'];
 	
 	//Walidacja po stronie serwera
-	
+	if ( strlen($login) < 3 || strlen($login) > 25) //login krotszy/dluzszy niz
+	{
+
+	}
 	
 	
 	if($walidacja)
